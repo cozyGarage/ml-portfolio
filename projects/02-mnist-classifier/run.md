@@ -1,25 +1,16 @@
-# Run Guide
+# Project 2 Run Guide
 
-## Classical path
-Run the baseline comparison and confusion analysis:
-
+## Classical only
 ```bash
 python scripts/run_project2_mnist.py --stage classical
 ```
 
-## PyTorch path
-Run the PyTorch training stage:
-
+## PyTorch only
 ```bash
-python scripts/run_project2_mnist.py --stage pytorch --artifact-dir ./artifacts/project2
+python scripts/run_project2_mnist.py --stage pytorch --artifact-dir /content/drive/MyDrive/ml-portfolio-artifacts/project2
 ```
 
-## Everything
-Run both classical and PyTorch stages:
-
+## Full pipeline
 ```bash
-python scripts/run_project2_mnist.py --stage all --artifact-dir ./artifacts/project2
+python scripts/run_project2_mnist.py --stage all --artifact-dir /content/drive/MyDrive/ml-portfolio-artifacts/project2
 ```
-
-## Colab recommendation
-Use Colab for the PyTorch stage, especially if you want GPU.

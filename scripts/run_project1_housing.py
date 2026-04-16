@@ -19,6 +19,7 @@ def main():
         "baseline_train.py",
         "crossval_compare.py",
         "tune_random_forest.py",
+        "feature_importance.py",
     ]
 
     for step in steps:
@@ -28,7 +29,7 @@ def main():
             sys.exit(code)
 
     print("\nProject 1 pipeline completed.")
-    print("Next: update the notes templates with your results.")
+    print("Next: update the notes templates and final summary.")
 
 
 if __name__ == "__main__":

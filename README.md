@@ -1,89 +1,37 @@
 # Machine Learning Portfolio
 
-This repository is an umbrella portfolio for learning machine learning through project-based practice using **Scikit-Learn**, **PyTorch**, and related tools.
+This repository is a project-based machine learning learning system built around:
+- **GitHub** for code and documentation
+- **Google Colab** for heavier training and GPU use
+- **Google Drive** for saving large artifacts such as models, metrics, figures, and logs
+- **Local development** for editing, Git, and smaller experiments
 
-It is structured as a long-term learning system rather than a single project. The workflow is designed so you can study locally, train in **Google Colab**, store large outputs in **Google Drive**, and keep code and documentation in **GitHub**.
-
----
-
-## What This Repo Is For
-
-Use this repository to:
-- learn machine learning by building projects
-- practice end-to-end workflows: data loading, preprocessing, training, evaluation, and documentation
-- build a public portfolio over time
-- keep a repeatable study and experiment system
-
----
-
-## How This Repo Works
-
-This repo is built around a simple split:
-
-- **GitHub** → source code, docs, project history
-- **Google Colab** → GPU training and heavier experiments
-- **Google Drive** → persistent artifact storage for models, metrics, figures, and logs
-- **Local machine** → editing, Git, reading, light debugging
-- **GitHub Actions** → lightweight CI checks
+The goal is to make the repo easy to use even if someone opens it for the first time.
 
 ---
 
 ## Start Here
 
-Read these files in order:
-
+Read these files first:
 1. `docs/START-HERE.md`
 2. `docs/setup-guide.md`
 3. `docs/colab-and-drive-guide.md`
 4. `docs/study-workflow-guide.md`
 5. `docs/project-readme-guide.md`
 
-These are the repo-level usage guides.
-
----
-
-## Current Repo Structure
-
-```text
-ml-portfolio/
-├── README.md
-├── .gitignore
-├── requirements.txt
-├── requirements-colab.txt
-├── docs/
-├── projects/
-├── src/
-├── scripts/
-└── .github/
-```
-
-Important folders:
-- `docs/` → study and usage guides
-- `projects/` → individual portfolio projects
-- `src/` → reusable code and CLI pieces
-- `scripts/` → run scripts
-
 ---
 
 ## Quick Setup
 
-### Clone the repo
-
+### Clone the repository
 ```bash
 git clone https://github.com/cozyGarage/ml-portfolio.git
 cd ml-portfolio
-```
-
-### Pull latest changes
-
-```bash
 git pull origin main
 ```
 
-### Optional local environment
-
+### Optional local Python environment
 Linux/macOS:
-
 ```bash
 python -m venv venv
 source venv/bin/activate
@@ -91,7 +39,6 @@ pip install -r requirements.txt
 ```
 
 Windows PowerShell:
-
 ```powershell
 python -m venv venv
 venv\Scripts\Activate.ps1
@@ -100,179 +47,82 @@ pip install -r requirements.txt
 
 ---
 
-## Colab Workflow
-
-Use Colab when you want internet access, notebook convenience, or GPU.
-
-### In Colab
+## Colab Setup
 
 ```python
 from google.colab import drive
 drive.mount('/content/drive')
-```
 
-```python
 %cd /content
 !git clone https://github.com/cozyGarage/ml-portfolio.git
 %cd ml-portfolio
 !pip install -r requirements-colab.txt
 ```
 
-Enable GPU in Colab:
-- Runtime
-- Change runtime type
-- Hardware accelerator
-- GPU
-
----
-
-## Google Drive Artifact Folder
-
-Create this folder in Drive:
+Recommended Drive folder:
 
 ```text
 MyDrive/ml-portfolio-artifacts/
-```
-
-Recommended subfolders:
-
-```text
-models/
-metrics/
-figures/
-logs/
-```
-
-Use Drive for large outputs instead of committing them to GitHub.
-
----
-
-## How To Run the Repo
-
-### Current root-level entry points
-
-CLI starter:
-
-```bash
-python -m src.ml_portfolio.cli train
-python -m src.ml_portfolio.cli evaluate
-python -m src.ml_portfolio.cli init-project
-```
-
-Training starter:
-
-```bash
-python scripts/run_train.py
-```
-
-In Colab:
-
-```python
-!python scripts/run_train.py
+├── project1/
+├── project2/
+└── project3/
 ```
 
 ---
 
-## Project 1: Housing Price Predictor
+## Current Active Projects
 
-This is the first active project in the portfolio.
+### Project 1 — Housing Price Predictor
+Regression workflow with tabular data.
 
-Location:
-
-```text
-projects/01-housing-price-predictor/
-```
-
-### What is included
-- baseline training script
-- cross-validation comparison script
-- random forest tuning script
-- run guides
-- notes templates
-
-### Run Project 1 locally
-
+One-command run:
 ```bash
 python scripts/run_project1_housing.py
 ```
 
-Or run the steps individually:
+Useful files:
+- `projects/01-housing-price-predictor/README.md`
+- `projects/01-housing-price-predictor/stage-3-guide.md`
+- `projects/01-housing-price-predictor/stage-4-guide.md`
 
-```bash
-python projects/01-housing-price-predictor/src/baseline_train.py
-python projects/01-housing-price-predictor/src/crossval_compare.py
-python projects/01-housing-price-predictor/src/tune_random_forest.py
-```
+### Project 2 — MNIST / Digits Classifier
+Intensive classification project with a classical track and a PyTorch track.
 
-### Run Project 1 in Colab
-
-```python
-!python scripts/run_project1_housing.py
-```
-
----
-
-## Project 2: MNIST / Digits Classifier
-
-This is the next intensive classification project.
-
-Location:
-
-```text
-projects/02-mnist-classifier/
-```
-
-### What is included
-- classical sklearn classification pipeline
-- confusion matrix and error analysis step
-- PyTorch MNIST training for Colab / GPU
-- one-command project runner
-
-### Run Project 2 locally
-
+Classical track:
 ```bash
 python scripts/run_project2_mnist.py --stage classical
 ```
 
-### Run Project 2 in Colab
-
-```python
-!python scripts/run_project2_mnist.py --stage all --artifact-dir /content/drive/MyDrive/ml-portfolio-artifacts/project2
+PyTorch / Colab track:
+```bash
+python scripts/run_project2_mnist.py --stage pytorch --artifact-dir /content/drive/MyDrive/ml-portfolio-artifacts/project2
 ```
 
----
+Everything:
+```bash
+python scripts/run_project2_mnist.py --stage all --artifact-dir /content/drive/MyDrive/ml-portfolio-artifacts/project2
+```
 
-## What To Commit
+### Project 3 — Model Benchmark Tool
+Systematic model comparison across datasets and metrics.
 
-Commit to GitHub:
-- source code
-- docs
-- project READMEs
-- configs
-- lightweight notebooks
-- result summaries
-
-Do not commit:
-- large model files
-- large datasets
-- temporary checkpoints
-- huge logs
+Run:
+```bash
+python scripts/run_project3_benchmark.py --dataset wine
+```
 
 ---
 
 ## Recommended Study Loop
 
 For each project:
-1. read the relevant concept
-2. explore in a notebook
-3. move stable code into `src/`
-4. run training
-5. save large outputs to Drive
-6. update README and notes
-7. commit progress
+1. read the concept
+2. run the project or stage
+3. inspect outputs
+4. write notes and interpretation
+5. commit progress
 
-Example commit flow:
-
+Example:
 ```bash
 git add .
 git commit -m "Update project progress"
@@ -281,12 +131,27 @@ git push origin main
 
 ---
 
+## What to Commit
+Commit:
+- code
+- docs
+- notes
+- small results summaries
+- lightweight notebooks
+
+Do not commit:
+- large model files
+- large datasets
+- huge logs
+- temporary checkpoints
+
+Store large outputs in Google Drive.
+
+---
+
 ## Best Entry Point Right Now
-
-If you are new to this repo, start here:
-
-1. `docs/START-HERE.md`
-2. `projects/01-housing-price-predictor/plan.md`
-3. `projects/02-mnist-classifier/README.md`
-
-That gives you the fastest path to doing real work in the repo.
+If you are starting fresh:
+1. run Project 1 once
+2. run Project 2 classical path
+3. run Project 2 PyTorch path in Colab
+4. use Project 3 to compare models more systematically

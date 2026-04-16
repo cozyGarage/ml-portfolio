@@ -1,17 +1,17 @@
 # Error Analysis Template
 
-## Model Used
+## Best Classical Model
+- 
 
-## Confusion Matrix Findings
-- classes most often confused:
-- strongest classes:
-- weakest classes:
-
-## Why These Errors Might Happen
+## Top Confusion Pairs
 - 
 - 
 - 
 
-## Improvement Ideas
+## Misclassified Example Pattern
 - 
+
+## Hypothesis
+Why are these classes getting confused?
+
 - 

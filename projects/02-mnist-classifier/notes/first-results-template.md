@@ -1,20 +1,25 @@
-# First Results Template
+# Project 2 First Results Template
 
-## Date
-YYYY-MM-DD
+## Classical Models Tested
+- Logistic Regression
+- KNN
+- SVC (RBF)
+- Random Forest
 
-## Classical Models
+## Accuracy
 - Logistic Regression:
 - KNN:
-- SVC RBF:
+- SVC (RBF):
 - Random Forest:
 
-## Best Classical Model
+## Macro F1
+- Logistic Regression:
+- KNN:
+- SVC (RBF):
+- Random Forest:
 
-## Key Observation
-- 
-- 
+## Best Model
 - 
 
-## Next Step
+## First Interpretation
 - 
