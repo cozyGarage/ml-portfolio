@@ -5,3 +5,7 @@ venv/
 .ipynb_checkpoints/
 data/
 models/
+
+# macOS
+.DS_Store
+**/.DS_Store
